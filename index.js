@@ -17,9 +17,9 @@ const postRoutes= require('./routes/posts')
 app.use('/api/user',authRoutes)
 app.use('/api/posts',postRoutes)
 // middleware 
+const port = 3000 || process.env.PORT
 
 
-
-app.listen(3000||process.env.PORT,()=>{
+app.listen(port,()=>{
     console.log('listening to port 3000 .......')
 })
