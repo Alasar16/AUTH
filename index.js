@@ -4,15 +4,17 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
+
+app.get('/user',(req,res)=>{
+    res.json({msg:'hello app is running'})
+})
 app.use(express.json())
 //connsect to DB
 mongoose.connect(process.env.DB_Connect, ()=>{
     console.log('connected to db..')
 })
 
-app.get('/user',(req,res)=>{
-    res.json({msg:'hello app is running'})
-})
+
 
 // Import Routes
 const authRoutes = require('./routes/auth')
