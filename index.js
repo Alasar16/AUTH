@@ -4,7 +4,12 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
-
+app.get('/user',(req,res)=>{
+    res.json({
+        username:"ibrahim",
+        email:"hema@gmail.com"
+    })
+})
 app.use(express.json())
 //connsect to DB
 mongoose.connect(process.env.DB_Connect, ()=>{
