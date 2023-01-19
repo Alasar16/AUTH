@@ -11,7 +11,7 @@ mongoose.connect(process.env.DB_Connect, ()=>{
 })
 
 app.get('/user',(req,res)=>{
-    res.json({'hello app is running'})
+    res.json({msg:'hello app is running'})
 })
 
 // Import Routes
