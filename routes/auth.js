@@ -32,11 +32,9 @@ router.post('/register' , async(req , res)=>{
     }
 })
 
-router.get('/users',(req , res)=>{
-    res.json({
-        username:"ibrahim",
-        email:"hema@gmail.com"
-    })
+router.get('/users',async(req , res)=>{
+    const allUsers=await User.find()
+    if(allUsers) res.status(200).json(allUsers)
 })
 
 
