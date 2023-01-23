@@ -39,6 +39,11 @@ app.get('/users',async(req , res)=>{
     if(allUsers) res.status(200).json(allUsers)
 })
 
+app.get('/get',(req , res)=>{
+    res.json({
+        message:"hello"
+    })
+})
 
 
 app.use(express.json())
