@@ -1,7 +1,7 @@
-const router =require('express').Router()
+// const router =require('express').Router()
 
 
-router.get('/',(req ,res )=>{
-    res.send(req.user)
-})
-module.exports=router
+// router.get('/',(req ,res )=>{
+//     res.send(req.user)
+// })
+// module.exports=router
