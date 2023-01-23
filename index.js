@@ -42,6 +42,11 @@ app.get('/users',async(req , res)=>{
         if(allUsers) return res.status(200).send(allUsers)
     })
 
+app.get('/home',(req,res)=>{
+    res.json({
+        msg:"hello"
+    })
+})
 ////////////////////////////////////////////////////
 //connsect to DB
 mongoose.connect(process.env.DB_Connect, ()=>{
@@ -49,9 +54,7 @@ mongoose.connect(process.env.DB_Connect, ()=>{
 })
 
 
-app.get('/home',(req,res)=>{
-    res.send('hello')
-})
+
 // // Import Routes
 // const authRoutes = require('./routes/auth')
 // // Routes Middleware
