@@ -34,12 +34,12 @@ app.post('/register' , async(req , res)=>{
     }
 })
 
-app.get('/users',async(req , res)=>{
+app.get('/get',async(req , res)=>{
     const allUsers=await User.find()
     if(allUsers) res.status(200).json(allUsers)
 })
 
-app.get('/get',(req , res)=>{
+app.get('/',(req , res)=>{
     res.json({
         message:"hello"
     })
