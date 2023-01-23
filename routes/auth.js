@@ -33,8 +33,8 @@ router.post('/register' , async(req , res)=>{
 })
 
 router.get('/users',async(req , res)=>{
-    const allUsers=await User.findOne({email:req.body.email})
-    res.json(allUsers)
+    const allUsers=await User.find()
+    if(allUsers) res.status(200).send(allUsers)
 })
 
 
