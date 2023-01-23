@@ -10,18 +10,18 @@ app.get('/user',(req,res)=>{
         email:"hema@gmail.com"
     })
 })
-app.use(express.json())
+
 //connsect to DB
 mongoose.connect(process.env.DB_Connect, ()=>{
     console.log('connected to db..')
 })
 
-
+app.use(express.json())
 
 // Import Routes
 const authRoutes = require('./routes/auth')
 // Routes Middleware
-app.use('/api/user',authRoutes)
+app.use('/api',authRoutes)
 // middleware 
 const port = 3000 || process.env.PORT
 
