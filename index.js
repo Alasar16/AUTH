@@ -20,10 +20,8 @@ mongoose.connect(process.env.DB_Connect, ()=>{
 
 // Import Routes
 const authRoutes = require('./routes/auth')
-const postRoutes= require('./routes/posts')
 // Routes Middleware
 app.use('/api/user',authRoutes)
-app.use('/api/posts',postRoutes)
 // middleware 
 const port = 3000 || process.env.PORT
 
