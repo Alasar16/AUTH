@@ -35,7 +35,7 @@ router.post('/register' , async(req , res)=>{
 router.get('/users',async(req , res)=>{
     
     const users =await User.find()
-    if(users) res.status(200).json(users)
+    if(users) res.status(200).send(users)
 })
 
 
