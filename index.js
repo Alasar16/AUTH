@@ -15,11 +15,11 @@ app.post('/register' , async(req , res)=>{
     const{error}=registerValidation(req.body)
     if(error) return res.status(400).send(error.details[0].message)
 
-    // //check if the database is exist
-    // const email = await User.findOne({email : req.body.email})
-    // if(email){
-    //     res.status(400).send('email already exist')
-    // }
+    //check if the database is exist
+    const email = await User.findOne({email : req.body.email})
+    if(email){
+        res.status(400).send('email already exist')
+    }
     // create a new user
     const user = new User({
         firstName : req.body.firstName,
