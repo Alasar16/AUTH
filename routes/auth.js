@@ -34,5 +34,11 @@ router.get('/users',async(req , res)=>{
     if(allUsers) return res.status(200).send(allUsers)
 })
 
+router.delete('/:id',async(req,res)=>{
+    const id = req.params.id
+    const deletedPosts =await User.deleteOne({_id:id})
+    if(deletedPosts) res.json(deletedPosts)
+})
+
 
 module.exports=router
