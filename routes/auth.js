@@ -16,17 +16,12 @@ router.post('/register' , async(req , res)=>{
     if(email){
         res.status(400).send('email already exist')
     }
-
-    // Hash the password
-    const salt =await bcrypt.genSalt(10)
-    const hashedPassword = await bcrypt.hash(req.body.password , salt)
-
     // create a new user
     const user = new User({
         firstName : req.body.firstName,
         lastName : req.body.lastName,
         email : req.body.email,
-        password : hashedPassword
+        image:req.body.image
     })
     
     try {
