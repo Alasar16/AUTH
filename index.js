@@ -49,7 +49,9 @@ mongoose.connect(process.env.DB_Connect, ()=>{
 })
 
 
-
+app.get('/home',(req,res)=>{
+    res.send('hello')
+})
 // // Import Routes
 // const authRoutes = require('./routes/auth')
 // // Routes Middleware
