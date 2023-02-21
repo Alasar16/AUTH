@@ -1,5 +1,5 @@
 const express = require('express')
-const mongoose = require('mongoose')
+const mySql = require('mysql')
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -11,9 +11,7 @@ app.use(express.json())
 
 ////////////////////////////////////////////////////
 //connsect to DB
-mongoose.connect(process.env.DB_Connect, ()=>{
-    console.log('connected to db..')
-})
+
 
 
 
