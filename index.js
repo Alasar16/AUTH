@@ -23,7 +23,7 @@ const db = mysql.createConnection({
 })
 
 
-app.get('/user',(req,res)=>{
+app.get('/registration',(req,res)=>{
     const q = 'SELECT * FROM `registration`'
     db.query(q,(err,data)=>{
         if(err) return res.json({msg:'db error'})
@@ -31,7 +31,7 @@ app.get('/user',(req,res)=>{
     })
 })
 
-app.post('/user',async(req,res)=>{
+app.post('/registration',async(req,res)=>{
     //validation
 
     const{error}=registerValidation(req.body)
@@ -54,7 +54,7 @@ app.post('/user',async(req,res)=>{
     })
 })
 
-app.delete('/user/:id',(req,res)=>{
+app.delete('/registration/:id',(req,res)=>{
     const id = req.params.id
     const q = 'DELETE FROM registration where id=?'
     db.query(q,[id],(err,data)=>{
