@@ -16,7 +16,7 @@ app.use(express.json())
 
 
 const db = mysql.createConnection({
-    host     : 'localhost',
+    host     : 'https://uninterested-dungarees-fish.cyclic.app',
     user     : 'root',
     password : '',
     database : 'user',
