@@ -4,9 +4,7 @@ const {registerValidation}=require('./validation')
 const dotenv = require('dotenv')
 dotenv.config()
 
-const app = express()
 
-app.use(express.json())
 
 
 
@@ -23,7 +21,9 @@ const db = mysql.createConnection({
     port:'3306'
 })
 
+const app = express()
 
+app.use(express.json())
 app.get('/registration',(req,res)=>{
     const q = 'SELECT * FROM `registration`'
     db.query(q,(err,data)=>{
