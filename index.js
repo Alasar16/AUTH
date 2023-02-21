@@ -66,7 +66,7 @@ app.delete('/registration/:id',(req,res)=>{
 })
 
 // middleware 
-const port = 3000 || process.env.PORT
+const port = process.env.PORT || 3000
 
 
 app.listen(port,()=>{
