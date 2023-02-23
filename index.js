@@ -1,5 +1,6 @@
 const express = require('express')
 const mysql = require('mysql')
+const bcrypt=require('bcrypt')
 const {registerValidation}=require('./validation')
 const dotenv = require('dotenv')
 dotenv.config()
@@ -38,7 +39,7 @@ app.post('/registration',async(req,res)=>{
     //validation
 
     const{error}=registerValidation(req.body)
-        if(error) return res.status(400).send(error.details[0].message)
+        if(error) return res.status(400).send(error.message)
 
     //new user
     const{first_name ,last_name , email,password}=req.body
