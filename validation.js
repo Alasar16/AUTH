@@ -2,25 +2,20 @@
 const Joi = require('@hapi/joi')
 
 //Register Validation
-const registerValidation = (data)=>{
+const categoriesValidation = (data)=>{
         const schema = Joi.object({
-        first_name: Joi.string().
-                required(),
-        last_name: Joi.string().
-                required(),
-        email : Joi.string().
-        required().
-        min(6).
-        email(),
-        password : Joi.string().
-        required().
-        min(5)
+        image: Joi.string().
+        required(),
+        swappedNumber: Joi.string().
+        required(),
+        title : Joi.string().
+        required()
         } )
         return schema.validate(data)
 }
 
 
-module.exports.registerValidation=registerValidation
+module.exports.categoriesValidation=categoriesValidation
 
 
 
